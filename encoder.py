@@ -65,6 +65,25 @@ def string_to_binary(test_str):
     return res
 
 
-def binary_to_string(binary):
-    res = bytearray(int(binary[i: i + 7], 2) for i in range(0, len(binary), 7)).decode()
-    return res
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) <= 2:
+        print("Specify image name")
+
+    elif sys.argv[1] == "--h" or sys.argv[1] == "-help":
+        print("Image encoder. Example usage:")
+        print(" python encoder.py example.png encoded.png Text to be encoded")
+
+    else:
+        from PIL import Image
+
+        image_name = sys.argv[1]
+        encoded_name = sys.argv[2]
+        message = ' '.join(sys.argv[3:])
+
+        img = Image.open(image_name)
+
+        len_bits = 6
+        encode_message(img, message, len_bits)
+        img.save(encoded_name)
