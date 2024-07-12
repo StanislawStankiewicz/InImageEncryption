@@ -25,7 +25,7 @@ For clear view I will use a white 10x10 image and 6 least significant bits.
   <img src="https://github.com/StanislawStankiewicz/InImageEncryption/assets/60826828/a8c73983-0de8-42b2-8b5f-607ee004de7b" alt="white" width="300" height="300">
 </p>
 
-Now I will load it and encode the string `"Wybrane problemy informacji"` in it.
+Now I will load it and encode the string `"Wybrane problemy ochrony informacji"` in it.
 ```python
 img = Image.open('example.png')
 
